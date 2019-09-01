@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Prefabs/House/House.gd" type="Script" id=1]
+[ext_resource path="res://Arts/Nature/house.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 90, 129, 211, 158 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 25.3705, 19.491 )
+
+[node name="House" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -104.463, -78.4621, -105.215, 78.2536, -29.3601, 78.2536, -27.6077, 6.15437, 27.4681, 5.90401, 27.7184, 79.255, 103.823, 78.7543, 103.573, -78.7124 )
+
+[node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( -0.250351, 70.057 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2( 0.6147, -1.22943 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

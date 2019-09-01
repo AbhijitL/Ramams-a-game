@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Arts/Nature/Sprite/bf4.tres" type="Texture" id=1]
+[ext_resource path="res://Arts/Nature/Sprite/pf1.tres" type="Texture" id=2]
+[ext_resource path="res://Arts/Nature/Sprite/pf2.tres" type="Texture" id=3]
+[ext_resource path="res://Arts/Nature/Sprite/pf3.tres" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="pf" type="AnimatedSprite"]
+position = Vector2( 63.1362, 24.251 )
+frames = SubResource( 4 )
+animation = "idle"
+frame = 3
+playing = true
+
